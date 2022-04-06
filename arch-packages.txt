@@ -30,6 +30,7 @@ xf86-video-qxl
 xf86-video-vmware
 xorg
 xorg-server
+xorg-xinit
 
 # Services
 acpi

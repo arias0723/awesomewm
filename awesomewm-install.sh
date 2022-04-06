@@ -19,10 +19,10 @@ cp -R resources/.Xresources.d ~/
 cp -R resources/wallpapers/. ~/Pictures
 cp -R resources/fonts/. ~/.local/share/fonts
 #cp resources/.Xresources ~/
-#cp resources/.xinitrc ~/
+cp resources/.xinitrc ~/
 #cp resources/.gtkrc-2.0 ~/
 chmod -R +x ~/.screenlayout
-#chmod +x ~/.xinitrc
+chmod +x ~/.xinitrc
 
 # ZSH cfg
 #cp -R resources/zsh/theme/. ~/

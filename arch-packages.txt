@@ -7,6 +7,7 @@ capitaine-cursors
 #dex
 dunst
 feh
+gtkmm
 #file-roller
 #i3lock
 #lightdm

@@ -1,0 +1,99 @@
+#!/bin/zsh
+zmodload -Fa zsh/parameter p:commands p:dirstack p:functions
+
+.autocomplete.recent-dirs.precmd() {
+  if [[ -v functions[zshz] && -v functions[_zshz_precmd] ]] &&
+      zstyle -T ':autocomplete:' recent-dirs 'zsh-z'; then
+
+    _autocomplete.recent_dirs() {
+      reply=( "$( zshz --complete -l $1 2>/dev/null )" )
+    }
+
+  elif [[ -v commands[zoxide] && -v functions[__zoxide_hook] ]] &&
+      zstyle -T ':autocomplete:' recent-dirs 'zoxide'; then
+
+    _autocomplete.recent_dirs() {
+      reply=( "$( zoxide query --list $1 2>/dev/null )" )
+    }
+
+  elif [[ -v functions[_zlua] && -v functions[_zlua_precmd] ]] &&
+      zstyle -T ':autocomplete:' recent-dirs 'z.lua'; then
+
+    _autocomplete.recent_dirs() {
+      reply=( "${(@)${(f)$( _zlua --complete $1 2>/dev/null )}##<->[[:space:]]##}" )
+    }
+
+  elif [[ -v functions[_z] && -v functions[_z_precmd] ]] &&
+      zstyle -T ':autocomplete:' recent-dirs 'z.sh'; then
+
+    _autocomplete.recent_dirs() {
+      reply=( "${(@)${(f)$( _z -l $1 2>&1 )}##(common:|<->)[[:space:]]##}" )
+    }
+
+  elif [[ -v commands[autojump] && -v AUTOJUMP_SOURCED ]] &&
+      zstyle -T ':autocomplete:' recent-dirs 'autojump'; then
+
+    _autocomplete.recent_dirs() {
+      reply=( "${(@)${(f)$( autojump --complete $1 2>/dev/null )}##${1}__<->__}" )
+    }
+
+  elif [[ ( -v commands[fasd] || -v functions[fasd] ) && -v functions[_fasd_preexec] ]] &&
+      zstyle -T ':autocomplete:' recent-dirs 'fasd'; then
+
+    _autocomplete.recent_dirs() {
+      reply=( "$( fasd -dlR $1 2>/dev/null )" )
+    }
+
+  else
+    setopt autopushd pushdignoredups
+    builtin autoload -Uz chpwd_recent_dirs chpwd_recent_filehandler
+
+    if ! zstyle -s :chpwd: recent-dirs-file _; then
+      local old=${ZDOTDIR:-$HOME}/.chpwd-recent-dirs
+      local new=$XDG_DATA_HOME/zsh/chpwd-recent-dirs
+      zstyle ':chpwd:*' recent-dirs-file $new
+      if [[ -e $old && ! -e $new ]]; then
+        zmodload -F zsh/files b:zf_mv
+        zf_mv "$old" "$new"
+      fi
+    fi
+    zstyle -s :chpwd: recent-dirs-max _ ||
+      zstyle ':chpwd:*' recent-dirs-max 0
+
+    local -aU reply=()
+    chpwd_recent_filehandler
+    dirstack=( (#i)${^reply[@]:#$PWD}(N-/) )
+
+    add-zsh-hook chpwd chpwd_recent_dirs
+
+    _autocomplete.recent_dirs() {
+      local -a dirs=( $dirstack[@] )
+      local ancestor=$PWD:h
+      while [[ $ancestor != '/' ]]; do
+        dirs=( ${(@)dirs[@]:#$ancestor} )
+        ancestor=$ancestor:h
+      done
+      dirs=( ${(@)dirs[@]:#$PWD(|/[^/]#)} )
+
+      local -i e max=2
+      reply=()
+      zstyle -a ":completion:${curcontext}:" max-errors max_ &&
+        max=${${(M)max_:#<->}[1]}
+      for (( e = 0; e <= max; e++ )); do
+        reply=( ${(M@)dirs[@]:#*(#ia$e)${PREFIX}${SUFFIX}[^/]#} )
+        (( $#reply[@] )) &&
+          break
+      done
+      reply=( ${(@)reply[1,10]} )
+      (( $#reply[@] ))
+    }
+  fi
+
+  if [[ ( -v commands[fasd] || -v functions[fasd] ) && -v functions[_fasd_preexec] ]] &&
+      zstyle -T ':autocomplete:' recent-files 'fasd'; then
+
+    _autocomplete.recent_files() {
+      reply=( "$( fasd -flR $1 2>/dev/null )" )
+    }
+  fi
+}

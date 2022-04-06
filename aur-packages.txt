@@ -1,0 +1,19 @@
+# GUI 
+awesome-git 
+picom-git 
+rofi 
+todo-bin 
+acpi 
+acpid
+wireless_tools 
+inotify-tools 
+polkit-gnome 
+xdotool 
+maim
+brightnessctl 
+alsa-utils 
+alsa-tools 
+lm_sensors
+
+# Utils
+#sublime-text-3

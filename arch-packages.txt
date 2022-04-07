@@ -7,10 +7,10 @@ capitaine-cursors
 #dex
 dunst
 feh
+gdm
 gtkmm
 #file-roller
 #i3lock
-#lightdm
 #lightdm-slick-greeter
 #lxappearance-gtk3
 #nitrogen

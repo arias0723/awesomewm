@@ -14,6 +14,12 @@ brightnessctl
 alsa-utils 
 alsa-tools 
 lm_sensors
+# TODO REMOVE
+mpd 
+mpc 
+mpdris2 
+ncmpcpp 
+playerctl
 
 # Utils
 #sublime-text-3

@@ -32,7 +32,10 @@ chmod +x ~/.xinitrc
 #sudo usermod --shell /usr/bin/zsh ghost
 #sudo usermod --shell /usr/bin/zsh root
 
-# Misc
+# Services cfg
 sudo systemctl enable NetworkManager.service
+# For charger plug/unplug events (if you have a battery)
+sudo systemctl enable acpid.service
+sudo systemctl start acpid.service
 sudo fc-cache -f -v
 

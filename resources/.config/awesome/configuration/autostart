@@ -7,6 +7,10 @@ start() {
   fi 
 }
 
+# music
+start mpd
+start mpDris2 # add playerctl support to mpd
+
 # compositor
 start picom -b --experimental-backends --dbus --config $HOME/.config/awesome/theme/picom.conf
 

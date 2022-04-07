@@ -24,7 +24,6 @@ vscode = "code"
 browser = "firefox"
 launcher = "rofi -show drun -theme " .. os.getenv("HOME") .. "/.config/awesome/theme/rofi.rasi"
 file_manager = "nautilus"
-music_client = terminal .. " --class music -e ncmpcpp"
 
 -- Weather API
 openweathermap_key = "" -- API Key

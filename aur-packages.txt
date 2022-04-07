@@ -21,5 +21,10 @@ mpdris2
 ncmpcpp 
 playerctl
 
+# Shell
+zsh-syntax-highlighting
+zsh-autosuggestions
+zsh-sudo-git
+
 # Utils
-#sublime-text-3
+sublime-text-3

@@ -10,7 +10,7 @@ mkdir ~/Pictures
 
 # Install base packages
 sudo pacman -Syu --needed --noconfirm $ARCH_PACKAGES
-yay -S --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES
+yay -Syu --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES
 
 # WM cfg
 cp -R resources/.config/. ~/.config/

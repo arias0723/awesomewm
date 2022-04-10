@@ -35,6 +35,8 @@ xorg-xinit
 
 # Services
 acpi
+acpid
+alsa-tools 
 alsa-utils
 gvfs
 gvfs-afc

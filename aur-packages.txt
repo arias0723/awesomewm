@@ -3,16 +3,16 @@ awesome-git
 picom-git 
 rofi 
 todo-bin 
-acpi 
-acpid
+#acpi 
+#acpid
 wireless_tools 
 inotify-tools 
 polkit-gnome 
 xdotool 
 maim
 brightnessctl 
-alsa-utils 
-alsa-tools 
+#alsa-utils 
+#alsa-tools 
 lm_sensors
 # TODO REMOVE
 mpd 
@@ -24,7 +24,7 @@ playerctl
 # Shell
 zsh-syntax-highlighting
 zsh-autosuggestions
-zsh-sudo-git
+#zsh-sudo-git
 
 # Utils
 sublime-text-3

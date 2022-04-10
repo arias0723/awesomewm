@@ -1,7 +1,7 @@
 # GUI 
 arandr
 #arc-gtk-theme-eos
-#arc-x-icons-theme
+arc-x-icons-theme
 capitaine-cursors
 #dex
 dunst
@@ -13,11 +13,6 @@ gtkmm
 maim
 nautilus
 nitrogen
-thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-volman
-tumbler
 xf86-video-intel
 xf86-video-nouveau
 xf86-video-qxl

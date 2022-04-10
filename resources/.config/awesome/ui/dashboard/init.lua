@@ -73,11 +73,11 @@ end
 
 -- Widget
 local profile = require("ui.dashboard.profile")
-local music = require("ui.dashboard.music")
-local media = require("ui.dashboard.mediakeys")
+--local music = require("ui.dashboard.music")
+--local media = require("ui.dashboard.mediakeys")
 local time = require("ui.dashboard.time")
 local date = require("ui.dashboard.date")
-local todo = require("ui.dashboard.todo")
+--local todo = require("ui.dashboard.todo")
 local weather = require("ui.dashboard.weather")
 local stats = require("ui.dashboard.stats")
 local notifs = require("ui.dashboard.notifs")
@@ -85,7 +85,7 @@ local notifs = require("ui.dashboard.notifs")
 
 local time_boxed = create_boxed_widget(centered_widget(time), dpi(260), dpi(95), beautiful.transparent)
 local date_boxed = create_boxed_widget(date, dpi(120), dpi(50), beautiful.dashboard_box_bg)
-local todo_boxed = create_boxed_widget(todo, dpi(120), dpi(120), beautiful.dashboard_box_bg)
+--local todo_boxed = create_boxed_widget(todo, dpi(120), dpi(120), beautiful.dashboard_box_bg)
 local weather_boxed = create_boxed_widget(weather, dpi(120), dpi(120), beautiful.dashboard_box_bg)
 local stats_boxed = create_boxed_widget(stats, dpi(120), dpi(190), beautiful.dashboard_box_bg)
 local notifs_boxed = create_boxed_widget(notifs, dpi(260), dpi(190), beautiful.dashboard_box_bg)
@@ -162,19 +162,19 @@ dashboard:setup {
                         stats_boxed,
                         layout = wibox.layout.fixed.vertical
                     },
-                    {
-                        date_boxed,
-                        todo_boxed,
-                        weather_boxed,
-                        layout = wibox.layout.fixed.vertical
-                    },
+                    -- {
+                    --     date_boxed,
+                    --     todo_boxed,
+                    --     weather_boxed,
+                    --     layout = wibox.layout.fixed.vertical
+                    -- },
                     layout = wibox.layout.fixed.horizontal
                 },
-                {
-                    music,
-                    media,
-                    layout = wibox.layout.fixed.horizontal
-                },
+                -- {
+                --     music,
+                --     media,
+                --     layout = wibox.layout.fixed.horizontal
+                -- },
                 notifs_boxed,
                 layout = wibox.layout.fixed.vertical
                 },

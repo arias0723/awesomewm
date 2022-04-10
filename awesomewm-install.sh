@@ -9,8 +9,8 @@ mkdir -p ~/.local/share/fonts
 mkdir ~/Pictures
 
 # Install base packages
-sudo pacman -Syu --needed --noconfirm $ARCH_PACKAGES
-yay -Syu --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES
+sudo pacman -Syu --needed --noconfirm $ARCH_PACKAGES > 2>&1 1>/dev/null
+yay -Syu --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES > 2>&1 1>/dev/null
 
 # WM cfg
 cp -R resources/.config/. ~/.config/

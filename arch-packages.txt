@@ -24,7 +24,7 @@ thunar-volman
 tumbler
 #ttf-nerd-fonts-symbols
 xbindkeys
-xclip
+#xclip
 xf86-video-intel
 xf86-video-nouveau
 xf86-video-qxl
@@ -34,10 +34,10 @@ xorg-server
 xorg-xinit
 
 # Services
-acpi
-acpid
-alsa-tools 
-alsa-utils
+#acpi
+#acpid
+#alsa-tools 
+#alsa-utils
 gvfs
 gvfs-afc
 gvfs-gphoto2
@@ -47,7 +47,7 @@ gvfs-smb
 networkmanager
 nm-connection-editor
 ntp
-pulseaudio
+#pulseaudio
 pavucontrol
 
 # Utils
@@ -55,7 +55,7 @@ bat
 firefox
 fzf
 git
-jq
+#jq
 kitty
 lsd
 neovim
@@ -64,5 +64,4 @@ pacman-contrib
 wget
 yay
 zsh
-
 

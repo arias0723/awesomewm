@@ -1,29 +1,7 @@
 # GUI
 awesome-git
 picom-git
-alacritty
 rofi
-todo-bin
-acpi
-acpid
-wireless_tools
-jq
-inotify-tools
-polkit-gnome
-xdotool
-xclip
-maim
-brightnessctl
-alsa-utils
-alsa-tools
-pulseaudio
-lm_sensors
-# TODO REMOVE
-mpd
-mpc
-mpdris2
-ncmpcpp
-playerctl
 
 # Shell
 zsh-syntax-highlighting

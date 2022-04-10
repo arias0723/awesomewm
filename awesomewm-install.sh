@@ -27,15 +27,16 @@ chmod +x ~/.xinitrc
 # ZSH cfg
 #cp -R resources/zsh/theme/. ~/
 #sudo cp -R resources/zsh/theme/. /root
-#sudo cp -R resources/zsh/plugins/. ~/ /usr/share
 #sudo ln -s -f ~/.zshrc /root/.zshrc
-#sudo usermod --shell /usr/bin/zsh ghost
-#sudo usermod --shell /usr/bin/zsh root
+sudo usermod --shell /usr/bin/zsh $CURRENT_USER
+sudo usermod --shell /usr/bin/zsh root
 
 # Services cfg
 sudo systemctl enable NetworkManager.service
 # For charger plug/unplug events (if you have a battery)
 sudo systemctl enable acpid.service
 sudo systemctl start acpid.service
-sudo fc-cache -f -v
+# GDM init
+sudo systemctl enable gdm.service
 
+sudo fc-cache -f -v

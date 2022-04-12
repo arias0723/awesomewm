@@ -25,11 +25,16 @@ chmod -R +x ~/.screenlayout
 chmod +x ~/.xinitrc
 
 # ZSH cfg
-#cp -R resources/zsh/theme/. ~/
-#sudo cp -R resources/zsh/theme/. /root
-#sudo ln -s -f ~/.zshrc /root/.zshrc
+cp -R resources/zsh/theme/. ~/
+sudo cp -R resources/zsh/theme/. /root
+sudo ln -s -f ~/.p10k.zsh /root/.p10k.zsh
+sudo ln -s -f ~/.zshrc /root/.zshrc
 sudo usermod --shell /usr/bin/zsh $CURRENT_USER
 sudo usermod --shell /usr/bin/zsh root
+
+# NVIM cfg
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 
 # Services cfg
 sudo systemctl enable NetworkManager.service

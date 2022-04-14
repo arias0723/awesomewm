@@ -1,20 +1,26 @@
-# BSPWM Rice
-**BSPWM Rice**
+# AWESOMEWM Rice
+**AWESOMEWM Rice**
 
 
 ## To Install manually
 
-    git clone https://github.com/arias0723/bspwm.git
+    git clone https://github.com/arias0723/awesomewm.git
 
-    cd bspwm
+    cd awesomewm
 
-    bash bspwm-install.sh
+    bash awesomewm-install.sh
    
 
-## Issues
+## Virtualbox
 
-    For alacritty
-        Add $LIBGL_ALWAYS_SOFTWARE=true to /etc/environment
-    
-    GLX and lagging DE
-        Use picom.xrender config file
+    sudo pacman -S virtualbox-guest-utils
+
+    VBoxClient --clipboard
+	VBoxClient --draganddrop
+    VBoxClient --seamless
+    VBoxClient --checkhostversion
+    VBoxClient --vmsvga
+
+    Disable picom from autostart (or configure xrender instead of glx)
+
+    Use VBoxSVGA with no 3D acceleration

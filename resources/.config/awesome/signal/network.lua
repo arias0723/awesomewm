@@ -11,7 +11,7 @@ local network_script = [[
   iwgetid -r
   "]]
 
--- Periodically get cpu info
+-- Periodically get network info
 awful.widget.watch(network_script, update_interval, function(_, stdout)
     -- local network = stdout:match('+(.*)%.%d...(.*)%(')
     local net_ssid = stdout

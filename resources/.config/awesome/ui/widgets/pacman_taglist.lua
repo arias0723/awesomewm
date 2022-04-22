@@ -53,7 +53,7 @@ local get_taglist = function(s)
         style = {
             shape = helpers.rrect(beautiful.border_radius)
         },
-        layout = {spacing = 0, layout = wibox.layout.fixed.vertical},
+        layout = {spacing = 0, layout = wibox.layout.fixed.horizontal},
         widget_template = {
             {
                 {id = 'icon_role', widget = wibox.widget.imagebox},

@@ -290,10 +290,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
     -- Create the wibar
     s.mywibar = awful.wibar({
         type = "dock",
-        position = "left",
+        position = "top",
         screen = s,
-        height = awful.screen.focused().geometry.height - dpi(50),
-        width = dpi(50),
+        height = dpi(50),
+        width = awful.screen.focused().geometry.width - dpi(50),
+        --height = awful.screen.focused().geometry.height - dpi(50),
+        --width = dpi(50),
         shape = helpers.rrect(beautiful.border_radius),
         bg = beautiful.transparent,
         ontop = true,
@@ -340,22 +342,25 @@ screen.connect_signal("request::desktop_decoration", function(s)
     s.mywibar:setup {
         {
             {
-                layout = wibox.layout.align.vertical,
+                layout = wibox.layout.align.horizontal,
                 expand = "none",
-                { -- top
+                { -- left
                     awesome_icon,
+                    spacing = dpi(10),
+                    layout = wibox.layout.fixed.horizontal
+                },
+                { -- middle
                     taglist,
                     spacing = dpi(10),
-                    layout = wibox.layout.fixed.vertical
+                    layout = wibox.layout.fixed.horizontal
                 },
-                -- middle
-                nil,
-                { -- bottom
+                { -- right
                     stats,
                     notif_center_button,
                     layoutbox,
+                    awesome_icon,
                     spacing = dpi(8),
-                    layout = wibox.layout.fixed.vertical
+                    layout = wibox.layout.fixed.horizontal
                 }
             },
             margins = dpi(8),
@@ -367,5 +372,5 @@ screen.connect_signal("request::desktop_decoration", function(s)
     }
 
     -- wibar position
-    s.mywibar.x = dpi(25)
+    s.mywibar.y = dpi(10)
 end)

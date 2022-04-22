@@ -3,7 +3,7 @@
 FS_CONFIG_DIR="$HOME/.config"
 GIT_CONFIG_DIR="./resources/.config"
 
-dir_names=("awesome")
+dir_names=("awesome" "kitty")
 
 for dir_name in ${dir_names[@]}; do
 	config_dir="$FS_CONFIG_DIR/$dir_name"

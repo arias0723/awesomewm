@@ -94,33 +94,34 @@ local notifs_boxed = create_boxed_widget(notifs, dpi(260), dpi(190), beautiful.d
 dashboard = wibox({
     type = "dock",
     screen = screen.primary,
-    height = screen_height - dpi(50),
+    height = screen_height - dpi(65),
     width = beautiful.dashboard_width or dpi(300),
     shape = helpers.rrect(beautiful.border_radius),
     ontop = true,
     visible = false
 })
-dashboard.y = dpi(25)
+dashboard.y = dpi(65)
 
 local slide = rubato.timed{
-    pos = dpi(-300),
+    pos = dpi(screen_width),
     rate = 60,
-    intro = 0.3,
-    duration = 0.8,
+    intro = 0.1,
+    duration = 0.3,
     easing = rubato.quadratic,
     awestore_compat = true,
     subscribed = function(pos) dashboard.x = pos end
 }
 
-local slide_strut = rubato.timed{
-    pos = dpi(0),
-    rate = 60,
-    intro = 0.3,
-    duration = 0.8,
-    easing = rubato.quadratic,
-    awestore_compat = true,
-    subscribed = function(width) dashboard:struts{left = width, right = 0, top = 0, bottom = 0} end
-}
+-- rescalation of the screen
+-- local slide_strut = rubato.timed{
+--     pos = dpi(0),
+--     rate = 60,
+--     intro = 0.3,
+--     duration = 0.8,
+--     easing = rubato.quadratic,
+--     awestore_compat = true,
+--     subscribed = function(width) dashboard:struts{left = width, right = 0, top = 0, bottom = 0} end
+-- }
 
 local dashboard_status = false
 
@@ -132,14 +133,14 @@ end)
 
 dashboard_show = function()
     dashboard.visible = true
-    slide:set(100)
-    slide_strut:set(375)
+    slide:set(screen_width - 310)
+    --slide_strut:set(375)
     dashboard_status = false
 end
 
 dashboard_hide = function()
-    slide:set(-375)
-    slide_strut:set(0)
+    slide:set(screen_width)
+    --slide_strut:set(0)
     dashboard_status = true
 end
 
@@ -158,16 +159,16 @@ dashboard:setup {
             {
                 {
                     {
-                        profile,
-                        stats_boxed,
+                        weather_boxed,
+                        --stats_boxed,
                         layout = wibox.layout.fixed.vertical
                     },
-                    -- {
-                    --     date_boxed,
-                    --     todo_boxed,
-                    --     weather_boxed,
-                    --     layout = wibox.layout.fixed.vertical
-                    -- },
+                    {
+                        --date_boxed,
+                        --todo_boxed,
+                        profile,
+                        layout = wibox.layout.fixed.vertical
+                    },
                     layout = wibox.layout.fixed.horizontal
                 },
                 -- {
@@ -175,8 +176,8 @@ dashboard:setup {
                 --     media,
                 --     layout = wibox.layout.fixed.horizontal
                 -- },
-                notifs_boxed,
-                layout = wibox.layout.fixed.vertical
+                    notifs_boxed,
+                    layout = wibox.layout.fixed.vertical
                 },
                 expand = "none",
                 layout = wibox.layout.align.horizontal

@@ -124,7 +124,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 hour,
                 min,
                 spacing = dpi(5),
-                layout = wibox.layout.fixed.vertical
+                layout = wibox.layout.fixed.horizontal
             },
             top = dpi(5),
             bottom = dpi(5),
@@ -144,7 +144,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             wrap_widget(batt),
             clock,
             spacing = dpi(5),
-            layout = wibox.layout.fixed.vertical
+            layout = wibox.layout.fixed.horizontal
         },
         bg = beautiful.xcolor0,
         shape = helpers.rrect(beautiful.bar_radius),

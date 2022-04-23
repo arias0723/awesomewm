@@ -18,8 +18,8 @@ launcher = "rofi -show drun -theme " .. os.getenv("HOME") .. "/.config/awesome/t
 file_manager = "nautilus"
 
 -- Weather API
-openweathermap_key = "" -- API Key
-openweathermap_city_id = "" -- City ID
+openweathermap_key = "faf00c97291fcf54f6d4869db0f86322" -- API Key
+openweathermap_city_id = "3441575" -- City ID
 weather_units = "metric" -- Unit
 
 -- Global Vars

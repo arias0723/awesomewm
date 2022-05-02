@@ -23,6 +23,12 @@ cp resources/.xinitrc ~/
 #cp resources/.gtkrc-2.0 ~/
 chmod -R +x ~/.screenlayout
 chmod +x ~/.xinitrc
+sudo fc-cache -f -v
+# patch awesomewm 
+git clone https://github.com/arias0723/rxyhn-awesomewm
+mv ~/.config/awesome ~/.config/awesome-orig
+cp -R ./rxyhn-awesomewm/config/awesome ~/.config/awesome
+cp ./rxyhn-awesomewm/misc/.Xresources ~/
 
 # ZSH cfg
 cp -R resources/zsh/theme/. ~/
@@ -36,12 +42,16 @@ sudo usermod --shell /usr/bin/zsh root
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 
+# Add extra repositories
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+sudo ./strap.sh
+sudo pacman -Sy
+
 # Services cfg
 sudo systemctl enable NetworkManager.service
-# For charger plug/unplug events (if you have a battery)
+# charger plug/unplug events (if you have a battery)
 sudo systemctl enable acpid.service
 sudo systemctl start acpid.service
 # GDM init
 sudo systemctl enable gdm.service
-
-sudo fc-cache -f -v

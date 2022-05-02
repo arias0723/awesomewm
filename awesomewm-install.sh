@@ -40,16 +40,6 @@ sudo ln -s -f ~/.zshrc /root/.zshrc
 sudo usermod --shell /usr/bin/zsh $CURRENT_USER
 sudo usermod --shell /usr/bin/zsh root
 
-# NVIM cfg
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-#nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
-
-# Add extra repositories
-curl -O https://blackarch.org/strap.sh
-chmod +x strap.sh
-sudo ./strap.sh
-sudo pacman -Sy
-
 # Services cfg
 sudo systemctl enable NetworkManager.service
 # charger plug/unplug events (if you have a battery)

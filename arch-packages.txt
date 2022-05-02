@@ -13,6 +13,7 @@ gtkmm
 maim
 nautilus
 nitrogen
+papirus-icon-theme
 xf86-video-intel
 xf86-video-nouveau
 xf86-video-qxl

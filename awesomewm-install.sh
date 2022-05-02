@@ -29,7 +29,7 @@ sudo fc-cache -f -v
 # patch awesomewm 
 git clone https://github.com/arias0723/rxyhn-awesomewm
 mv ~/.config/awesome ~/.config/awesome-orig
-cp -R ./rxyhn-awesomewm/config/awesome ~/.config/awesome
+cp -R ./rxyhn-awesomewm/config/awesome ~/.config/
 cp ./rxyhn-awesomewm/misc/.Xresources ~/
 
 # ZSH cfg
@@ -42,7 +42,7 @@ sudo usermod --shell /usr/bin/zsh root
 
 # NVIM cfg
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
+#nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 
 # Add extra repositories
 curl -O https://blackarch.org/strap.sh

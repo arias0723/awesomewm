@@ -61,3 +61,8 @@ xdotool
 yay
 zsh
 
+# TO REMOVE
+mpd
+mpc
+ncmpcpp
+playerctl

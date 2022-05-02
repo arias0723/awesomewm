@@ -7,6 +7,8 @@ AUR_PACKAGES=`grep -vE "^#" aur-packages.txt`
 mkdir -p ~/.config
 mkdir -p ~/.local/share/fonts
 mkdir ~/Pictures
+# update pgp keyring
+sudo pacman -Sy archlinux-keyring
 
 # Install base packages
 sudo pacman -Syu --needed --noconfirm $ARCH_PACKAGES 2>&1 1>/dev/null

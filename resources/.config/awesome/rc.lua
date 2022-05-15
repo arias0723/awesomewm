@@ -1,42 +1,60 @@
 pcall(require, "luarocks.loader")
+--[[
+ _____ __ _ __ _____ _____ _____ _______ _____
+|     |  | |  |  ___|  ___|     |       |  ___|
+|  -  |  | |  |  ___|___  |  |  |  | |  |  ___|
+|__|__|_______|_____|_____|_____|__|_|__|_____|
 
--- Standard awesome library
-local gfs = require("gears.filesystem")
-local awful = require("awful")
+============== @author rxyhn ==================
+======== https://github.com/rxyhn =============
+--]]
 
--- Theme handling library
-local beautiful = require("beautiful")
-dpi = beautiful.xresources.apply_dpi
-beautiful.init(gfs.get_configuration_dir() .. "theme/theme.lua")
-
--- Default Applications
+-- 🎨 Themes
+themes = {
+	"day", -- [1] 🌕 Beautiful Light Colorscheme
+	"night", -- [2] 🌑 Aesthetic Dark Colorscheme
+}
+theme = themes[2]
+-- ===================================================================
+-- 🌊 Default Applications
 terminal = "kitty"
 editor = terminal .. " -e " .. os.getenv("EDITOR")
 vscode = "code"
 browser = "firefox"
-launcher = "rofi -show drun -theme " .. os.getenv("HOME") .. "/.config/awesome/theme/rofi.rasi"
+web_search_cmd = "xdg-open https://duckduckgo.com/?q="
 file_manager = "nautilus"
+music_client = terminal .. " --class music -e ncmpcpp"
 
--- Weather API
-openweathermap_key = "faf00c97291fcf54f6d4869db0f86322" -- API Key
-openweathermap_city_id = "3441575" -- City ID
-weather_units = "metric" -- Unit
-
--- Global Vars
+-- 🌏 Weather API
+openweathermap_key = "" -- API Key
+openweathermap_city_id = "" -- City ID
+weather_units = "metric"
+-- ===================================================================
+-- 📚 Library
+local gfs = require("gears.filesystem")
+local awful = require("awful")
+local beautiful = require("beautiful")
+dpi = beautiful.xresources.apply_dpi
+-- ===================================================================
+-- 🌟 Load theme
+local theme_dir = gfs.get_configuration_dir() .. "theme/" .. theme .. "/"
+beautiful.init(theme_dir .. "theme.lua")
+-- ===================================================================
+-- 🖥 Get screen geometry
 screen_width = awful.screen.focused().geometry.width
 screen_height = awful.screen.focused().geometry.height
-
--- Autostart
+-- ===================================================================
+-- 🚀 Launch Autostart
 awful.spawn.with_shell(gfs.get_configuration_dir() .. "configuration/autostart")
-
--- Import Configuration
+-- ===================================================================
+-- 🤖 Import Configuration & module
 require("configuration")
-
--- Import Daemons and Widgets
+require("module")
+-- ===================================================================
+-- ✨ Import Daemons, UI & Widgets
 require("signal")
 require("ui")
-
--- Garbage Collector Settings
+-- ===================================================================
+-- 🗑 Garbage Collector Settings
 collectgarbage("setpause", 110)
 collectgarbage("setstepmul", 1000)
-

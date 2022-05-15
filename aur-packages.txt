@@ -1,6 +1,7 @@
 # GUI
 awesome-git
 picom-git
+wingpanel-standalone-git
 rofi
 
 # Shell

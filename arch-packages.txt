@@ -1,7 +1,16 @@
 # GUI 
+wingpanel-indicator-datetime
+wingpanel-indicator-network 
+wingpanel-indicator-notifications 
+wingpanel-indicator-sound
+#pantheon-default-settings pantheon-settings-daemon
+pantheon-geoclue2-agent
+pantheon-polkit-agent
+pantheon-calendar
+
 arandr
 #arc-gtk-theme-eos
-arc-x-icons-theme
+#arc-x-icons-theme
 capitaine-cursors
 #dex
 dunst
@@ -13,7 +22,7 @@ gtkmm
 maim
 nautilus
 nitrogen
-papirus-icon-theme
+#papirus-icon-theme
 xf86-video-intel
 xf86-video-nouveau
 xf86-video-qxl
@@ -41,7 +50,7 @@ nm-connection-editor
 ntp
 pulseaudio
 pavucontrol
-polkit-gnome
+#polkit-gnome
 wireless_tools
 
 # Utils

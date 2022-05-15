@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Init
-CURRENT_USER=$(cat /etc/passwd | grep "/home" |cut -d: -f1 |head -1)
+CURRENT_USER=$(cat /etc/passwd | grep "/home" | cut -d: -f1 | head -1)
 ARCH_PACKAGES=`grep -vE "^#" arch-packages.txt`
 AUR_PACKAGES=`grep -vE "^#" aur-packages.txt`
 mkdir -p ~/.config
@@ -9,10 +9,11 @@ mkdir -p ~/.local/share/fonts
 mkdir ~/Pictures
 # update pgp keyring
 sudo pacman -Sy --needed --noconfirm archlinux-keyring
+sudo pacman -Syu 
 
 # Install base packages
-sudo pacman -Syu --needed --noconfirm $ARCH_PACKAGES 2>&1 1>/dev/null
-yay -Syu --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES 2>&1 1>/dev/null
+sudo pacman -S --needed --noconfirm $ARCH_PACKAGES
+yay -S --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES
 
 # WM cfg
 cp -R resources/.config/. ~/.config/
@@ -27,10 +28,11 @@ chmod -R +x ~/.screenlayout
 chmod +x ~/.xinitrc
 sudo fc-cache -f -v
 # patch awesomewm 
-git clone https://github.com/arias0723/rxyhn-awesomewm
-mv ~/.config/awesome ~/.config/awesome-orig
-cp -R ./rxyhn-awesomewm/config/awesome ~/.config/
-cp ./rxyhn-awesomewm/misc/.Xresources ~/
+#git clone https://github.com/arias0723/rxyhn-awesomewm
+#mv ~/.config/awesome ~/.config/awesome-orig
+#cp -R ./rxyhn-awesomewm/config/awesome ~/.config/
+#cp ./rxyhn-awesomewm/misc/.Xresources ~/
+# install WhiteSur GTK themes/icons
 
 # ZSH cfg
 cp -R resources/zsh/theme/. ~/

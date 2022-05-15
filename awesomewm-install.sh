@@ -7,13 +7,14 @@ AUR_PACKAGES=`grep -vE "^#" aur-packages.txt`
 mkdir -p ~/.config
 mkdir -p ~/.local/share/fonts
 mkdir ~/Pictures
-# update pgp keyring
-sudo pacman -Sy --needed --noconfirm archlinux-keyring
-sudo pacman -Syu 
+mkdir ./.work
 
+# Update pgp keyring & system
+sudo pacman -Sy --needed --noconfirm archlinux-keyring
+sudo pacman -Syu
 # Install base packages
-sudo pacman -S --needed --noconfirm $ARCH_PACKAGES
 yay -S --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES
+sudo pacman -S --needed --noconfirm $ARCH_PACKAGES
 
 # WM cfg
 cp -R resources/.config/. ~/.config/
@@ -32,7 +33,18 @@ sudo fc-cache -f -v
 #mv ~/.config/awesome ~/.config/awesome-orig
 #cp -R ./rxyhn-awesomewm/config/awesome ~/.config/
 #cp ./rxyhn-awesomewm/misc/.Xresources ~/
+
 # install WhiteSur GTK themes/icons
+cd .work
+git clone https://github.com/arias0723/WhiteSur-gtk-theme
+cd WhiteSur-gtk-theme
+./install.sh
+./tweak.sh -f monterey
+cd ..
+git clone https://github.com/arias0723/WhiteSur-icon-theme
+cd WhiteSur-icon-theme
+./install.sh
+cd ../..
 
 # ZSH cfg
 cp -R resources/zsh/theme/. ~/
@@ -48,4 +60,5 @@ sudo systemctl enable NetworkManager.service
 sudo systemctl enable acpid.service
 sudo systemctl start acpid.service
 # GDM init
-sudo systemctl enable gdm.service
+#sudo systemctl enable lightdm.service
+#sudo systemctl enable gdm.service

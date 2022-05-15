@@ -3,6 +3,8 @@ wingpanel-indicator-datetime
 wingpanel-indicator-network 
 wingpanel-indicator-notifications 
 wingpanel-indicator-sound
+lightdm-pantheon-greeter
+sound-theme-elementary
 #pantheon-default-settings pantheon-settings-daemon
 pantheon-geoclue2-agent
 pantheon-polkit-agent
@@ -16,8 +18,8 @@ capitaine-cursors
 dunst
 feh
 file-roller
-gdm
-gtkmm
+#gdm
+#gtkmm
 #lxappearance-gtk3
 maim
 nautilus

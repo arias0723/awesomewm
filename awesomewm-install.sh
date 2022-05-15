@@ -60,5 +60,5 @@ sudo systemctl enable NetworkManager.service
 sudo systemctl enable acpid.service
 sudo systemctl start acpid.service
 # GDM init
-#sudo systemctl enable lightdm.service
 #sudo systemctl enable gdm.service
+#sudo systemctl enable lightdm.service

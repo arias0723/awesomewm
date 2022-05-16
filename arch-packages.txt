@@ -5,22 +5,39 @@ xf86-video-qxl
 xf86-video-vmware
 xorg
 xorg-server
-xorg-server-xephyr
+#xorg-server-xephyr
 xorg-xinit
 
 # GUI 
+accountsservice
+xdg-user-dirs
 lightdm
 lightdm-gtk-greeter
+#lightdm-pantheon-greeter
 #pantheon-default-settings pantheon-settings-daemon
 pantheon-geoclue2-agent
 pantheon-polkit-agent
 sound-theme-elementary
 pantheon-calendar
+switchboard
+switchboard-plug-applications
+switchboard-plug-bluetooth
+switchboard-plug-datetime
+switchboard-plug-keyboard
+switchboard-plug-mouse-touchpad
+switchboard-plug-network
+switchboard-plug-notifications
+switchboard-plug-online-accounts
+switchboard-plug-power
+switchboard-plug-security-privacy
+switchboard-plug-sound
+wingpanel-indicator-bluetooth
 wingpanel-indicator-datetime
-wingpanel-indicator-network 
-wingpanel-indicator-notifications 
+wingpanel-indicator-network
+wingpanel-indicator-nightlight
+wingpanel-indicator-notifications
+wingpanel-indicator-power
 wingpanel-indicator-sound
-#lightdm-pantheon-greeter
 
 arandr
 #arc-gtk-theme-eos

@@ -16,7 +16,7 @@ sudo pacman -Syu
 sudo pacman -S --needed --noconfirm git
 git clone https://aur.archlinux.org/yay.git ./.work/yay
 cd .work/yay
-makepkg -si 
+makepkg -si --needed --noconfirm
 cd ../..
 # Install base packages
 yay -S --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES
@@ -39,18 +39,6 @@ sudo fc-cache -f -v
 #mv ~/.config/awesome ~/.config/awesome-orig
 #cp -R ./rxyhn-awesomewm/config/awesome ~/.config/
 #cp ./rxyhn-awesomewm/misc/.Xresources ~/
-
-# install WhiteSur GTK themes/icons
-cd .work
-git clone https://github.com/arias0723/WhiteSur-gtk-theme
-cd WhiteSur-gtk-theme
-./install.sh
-./tweak.sh -f monterey
-cd ..
-git clone https://github.com/arias0723/WhiteSur-icon-theme
-cd WhiteSur-icon-theme
-./install.sh
-cd ../..
 
 # ZSH cfg
 cp -R resources/zsh/theme/. ~/

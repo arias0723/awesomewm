@@ -7,21 +7,24 @@ start() {
   fi 
 }
 
-# music
-start mpd
-start mpDris2 # add playerctl support to mpd
-
-# compositor
+# Compositor
 start picom --experimental-backends --config $HOME/.config/awesome/theme/picom.conf
 
-# topbar
-start io.elementary.wingpanel
-
-# auth
-#start /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-# load X colors
+# Load X colors
 start xrdb $HOME/.Xresources
 
-# network manager
+# System Services
+start /usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polkit
+start /usr/lib/geoclue2-1-pantheon/pantheon-agent-geoclue2
+start io.elementary.notifications
+start io.elementary.calendar --background
+# VBox only
+#start /usr/bin/VBoxClient-all
+
+# Topbar
+start io.elementary.wingpanel
+
+# TO REMOVE
 #start nm-applet
+start mpd
+start mpDris2 # add playerctl support to mpd

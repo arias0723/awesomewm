@@ -2,7 +2,7 @@
 awesome-git
 picom-git
 wingpanel-standalone-git
-wingpanel-indicator-ayatana
+wingpanel-indicator-ayatana-git
 wingpanel-indicator-privacy-git
 wingpanel-indicator-weather-git
 rofi

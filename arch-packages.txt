@@ -14,7 +14,8 @@ xdg-user-dirs
 lightdm
 lightdm-gtk-greeter
 #lightdm-pantheon-greeter
-#pantheon-default-settings pantheon-settings-daemon
+#pantheon-default-settings 
+pantheon-settings-daemon
 pantheon-geoclue2-agent
 pantheon-polkit-agent
 sound-theme-elementary
@@ -29,7 +30,7 @@ switchboard-plug-network
 switchboard-plug-notifications
 switchboard-plug-online-accounts
 switchboard-plug-power
-switchboard-plug-security-privacy
+#switchboard-plug-security-privacy
 switchboard-plug-sound
 wingpanel-indicator-bluetooth
 wingpanel-indicator-datetime
@@ -61,6 +62,7 @@ acpi
 acpid
 alsa-tools 
 alsa-utils
+bluez
 brightnessctl
 gvfs
 gvfs-afc
@@ -75,25 +77,21 @@ nm-connection-editor
 ntp
 pulseaudio
 pavucontrol
-#polkit-gnome
 wireless_tools
 
 # Utils
 bat
 firefox
 fzf
-#git
 jq
 kitty
 lsd
 neovim
 pacman-contrib
-#rxvt-unicode
 wget
 xbindkeys
 xclip
 xdotool
-#yay
 zsh
 
 # TO REMOVE

@@ -11,7 +11,7 @@ mkdir ./.work
 
 # Update pgp keyring & system
 sudo pacman -Sy --needed --noconfirm archlinux-keyring
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 # Install yay package manager
 sudo pacman -S --needed --noconfirm git
 git clone https://aur.archlinux.org/yay.git ./.work/yay
@@ -19,8 +19,8 @@ cd .work/yay
 makepkg -si --needed --noconfirm
 cd ../..
 # Install base packages
-yay -S --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES
-sudo pacman -S --needed --noconfirm $ARCH_PACKAGES
+yay -S --needed --nodiffmenu --noremovemake --answerclean All $AUR_PACKAGES
+sudo pacman -S --needed $ARCH_PACKAGES
 
 # WM cfg
 cp -R resources/.config/. ~/.config/
@@ -50,9 +50,9 @@ sudo usermod --shell /usr/bin/zsh root
 
 # Services cfg
 sudo systemctl enable NetworkManager.service
+sudo systemctl enable bluetooth.service
 # charger plug/unplug events (if you have a battery)
 sudo systemctl enable acpid.service
 sudo systemctl start acpid.service
-# GDM init
-#sudo systemctl enable gdm.service
-#sudo systemctl enable lightdm.service
+# WM init
+sudo systemctl enable lightdm.service

@@ -65,7 +65,7 @@ wireless_tools
 bat
 firefox
 fzf
-git
+#git
 jq
 kitty
 lsd
@@ -76,7 +76,7 @@ wget
 xbindkeys
 xclip
 xdotool
-yay
+#yay
 zsh
 
 # TO REMOVE

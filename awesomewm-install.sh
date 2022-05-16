@@ -12,6 +12,12 @@ mkdir ./.work
 # Update pgp keyring & system
 sudo pacman -Sy --needed --noconfirm archlinux-keyring
 sudo pacman -Syu
+# Install yay package manager
+sudo pacman -S --needed --noconfirm git
+git clone https://aur.archlinux.org/yay.git ./.work/yay
+cd .work/yay
+makepkg -si 
+cd ../..
 # Install base packages
 yay -S --needed --nodiffmenu --noremovemake --answerclean All --noconfirm $AUR_PACKAGES
 sudo pacman -S --needed --noconfirm $ARCH_PACKAGES

@@ -75,7 +75,7 @@ client.connect_signal("request::titlebars", function(c)
 	-- Titlebars setup
 	--------------------
 
-	awful.titlebar(c, { position = "top", size = dpi(45), bg = beautiful.transparent }):setup({
+	awful.titlebar(c, { position = "top", size = dpi(40), bg = beautiful.transparent }):setup({
 		{
 			layout = wibox.layout.align.horizontal,
 			{
@@ -119,13 +119,13 @@ client.connect_signal("request::titlebars", function(c)
 		widget = wibox.container.background,
 	})
 
-	awful.titlebar(c, {
-		position = "bottom",
-		size = dpi(24),
-		bg = beautiful.transparent,
-	}):setup({
-		bg = beautiful.titlebar_bg,
-		shape = helpers.prrect(beautiful.border_radius, false, false, true, true),
-		widget = wibox.container.background,
-	})
+	-- awful.titlebar(c, {
+	-- 	position = "bottom",
+	-- 	size = dpi(24),
+	-- 	bg = beautiful.transparent,
+	-- }):setup({
+	-- 	bg = beautiful.titlebar_bg,
+	-- 	shape = helpers.prrect(beautiful.border_radius, false, false, true, true),
+	-- 	widget = wibox.container.background,
+	-- })
 end)

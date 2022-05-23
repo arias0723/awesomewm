@@ -28,7 +28,7 @@ ruled.client.connect_signal("request::rules", function()
 			raise = true,
 			size_hints_honor = false,
 			screen = awful.screen.preferred,
-			titlebars_enabled = false,
+			titlebars_enabled = true,
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 		},
 	})
@@ -40,7 +40,8 @@ ruled.client.connect_signal("request::rules", function()
 			class = "wingpanel"
 		},
 		properties = {
-			sticky = true
+			sticky = true,
+			titlebars_enabled = false
 		}
 	})
 
@@ -58,7 +59,6 @@ ruled.client.connect_signal("request::rules", function()
 		rule_any = {
 			class = {
 				"discord",
-				"wingpanel",
 				"Spotify",
 				"Org.gnome.Nautilus",
 			},

@@ -232,18 +232,6 @@ local list_update = function(widget, buttons, label, data, objects)
 			end
 		end)
 
-		-- Bling tag preview
-		tag_widget:connect_signal("mouse::enter", function()
-			if #object:clients() > 0 then
-				awesome.emit_signal("bling::tag_preview::update", object)
-				awesome.emit_signal("bling::tag_preview::visibility", awful.screen.focused(), true)
-			end
-		end)
-
-		tag_widget:connect_signal("mouse::leave", function()
-			awesome.emit_signal("bling::tag_preview::visibility", awful.screen.focused(), false)
-		end)
-
 		widget:add(tag_widget)
 		widget:set_spacing(dpi(6))
 	end

@@ -170,10 +170,10 @@ theme.control_center_widget_bg = theme.xbackground
 theme.control_center_button_bg = theme.lighter_bg
 
 -- Playerctl
-theme.playerctl_ignore = { "firefox", "qutebrowser", "chromium", "brave" }
-theme.playerctl_player = { "spotify", "mpd", "%any" }
-theme.playerctl_update_on_activity = true
-theme.playerctl_position_update_interval = 1
+-- theme.playerctl_ignore = { "firefox", "qutebrowser", "chromium", "brave" }
+-- theme.playerctl_player = { "spotify", "mpd", "%any" }
+-- theme.playerctl_update_on_activity = true
+-- theme.playerctl_position_update_interval = 1
 
 -- Mainmenu
 theme.menu_font = theme.font_name .. "medium 10"

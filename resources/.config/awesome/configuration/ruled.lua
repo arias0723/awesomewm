@@ -41,7 +41,34 @@ ruled.client.connect_signal("request::rules", function()
 		},
 		properties = {
 			sticky = true,
+			ontop = true,
 			titlebars_enabled = false
+		}
+	})
+
+	-- Wingpanel notifications
+	ruled.client.append_rule({
+		id = "elementary.notifications",
+		rule = {
+			class = "Io.elementary.notifications"
+		},
+		properties = {
+			sticky = true,
+			ontop = true,
+			placement = awful.placement.top_right,
+			titlebars_enabled = false
+		}
+		-- work on placement & stacking
+	})
+
+	-- Firefox tiling fix
+	ruled.client.append_rule({
+		id = "Firefox",
+		rule = {
+			class = "firefox"
+		},
+		properties = {
+			maximized = false
 		}
 	})
 

@@ -1,2 +1,2 @@
 require("ui.decorations.titlebar")
-require("ui.decorations.music")
+--require("ui.decorations.music")

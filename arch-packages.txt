@@ -1,8 +1,8 @@
 # Video & X11 
 xf86-video-intel
 xf86-video-nouveau
-xf86-video-qxl
-xf86-video-vmware
+#xf86-video-qxl
+#xf86-video-vmware
 xorg
 xorg-server
 #xorg-server-xephyr
@@ -39,18 +39,12 @@ wingpanel-indicator-nightlight
 wingpanel-indicator-notifications
 wingpanel-indicator-power
 wingpanel-indicator-sound
-
 arandr
-#arc-gtk-theme-eos
-#arc-x-icons-theme
 capitaine-cursors
 #dex
 dunst
 feh
 file-roller
-#gdm
-#gtkmm
-#lxappearance-gtk3
 maim
 nautilus
 nitrogen
@@ -72,10 +66,10 @@ gvfs-smb
 inotify-tools
 lm_sensors
 networkmanager
-nm-connection-editor
+#nm-connection-editor
 ntp
 pulseaudio
-pavucontrol
+#pavucontrol
 wireless_tools
 
 # Utils
@@ -84,6 +78,7 @@ firefox
 fzf
 jq
 kitty
+locate
 lsd
 neovim
 pacman-contrib

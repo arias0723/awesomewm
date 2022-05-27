@@ -42,6 +42,9 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ modkey, shift }, "t", function()
 		systray_toggle()
 	end, { description = "toggle systray", group = "launcher" }),
+	awful.key({ alt }, "space", function()
+		awful.spawn(rofi)
+	end, { description = "toggle systray", group = "launcher" }),
 })
 
 -- Client and Tabs Bindings

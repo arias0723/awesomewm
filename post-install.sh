@@ -5,7 +5,7 @@ cd ./.work
 git clone https://github.com/arias0723/WhiteSur-gtk-theme
 cd WhiteSur-gtk-theme
 ./install.sh
-./tweak.sh -f monterey
+./tweaks.sh -f monterey
 cd ..
 git clone https://github.com/arias0723/WhiteSur-icon-theme
 cd WhiteSur-icon-theme

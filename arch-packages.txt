@@ -1,11 +1,8 @@
 # Video & X11 
 xf86-video-intel
 xf86-video-nouveau
-#xf86-video-qxl
-#xf86-video-vmware
 xorg
 xorg-server
-#xorg-server-xephyr
 xorg-xinit
 
 # GUI 
@@ -66,10 +63,8 @@ gvfs-smb
 inotify-tools
 lm_sensors
 networkmanager
-#nm-connection-editor
 ntp
 pulseaudio
-#pavucontrol
 wireless_tools
 
 # Utils
@@ -87,9 +82,3 @@ xbindkeys
 xclip
 xdotool
 zsh
-
-# TO REMOVE
-#mpd
-#mpc
-#ncmpcpp
-#playerctl

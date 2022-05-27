@@ -23,8 +23,3 @@ start io.elementary.calendar --background
 
 # Topbar
 start io.elementary.wingpanel
-
-# TO REMOVE
-#start nm-applet
-start mpd
-start mpDris2 # add playerctl support to mpd

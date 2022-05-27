@@ -9,6 +9,13 @@ pcall(require, "luarocks.loader")
 ======== https://github.com/rxyhn =============
 --]]
 
+-- ===================================================================
+-- 📚 Library
+local gfs = require("gears.filesystem")
+local awful = require("awful")
+local beautiful = require("beautiful")
+dpi = beautiful.xresources.apply_dpi
+
 -- 🎨 Themes
 themes = {
 	"day", -- [1] 🌕 Beautiful Light Colorscheme
@@ -24,17 +31,13 @@ browser = "firefox"
 web_search_cmd = "xdg-open https://duckduckgo.com/?q="
 file_manager = "nautilus"
 music_client = terminal .. " --class music -e ncmpcpp"
+rofi = "rofi -no-lazy-grab -show drun -modi drun -theme " .. gfs.get_configuration_dir() .. "configuration/rofi.rasi"
 
 -- 🌏 Weather API
 openweathermap_key = "" -- API Key
 openweathermap_city_id = "" -- City ID
 weather_units = "metric"
--- ===================================================================
--- 📚 Library
-local gfs = require("gears.filesystem")
-local awful = require("awful")
-local beautiful = require("beautiful")
-dpi = beautiful.xresources.apply_dpi
+
 -- ===================================================================
 -- 🌟 Load theme
 local theme_dir = gfs.get_configuration_dir() .. "theme/" .. theme .. "/"

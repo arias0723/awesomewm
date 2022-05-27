@@ -61,7 +61,6 @@ end
 local dashboard = function(s)
 	s.profile = require("ui.central-panel.dashboard.profile")
 	s.music = require("ui.central-panel.dashboard.music")
-	s.media = require("ui.central-panel.dashboard.mediakeys")
 	s.time = require("ui.central-panel.dashboard.time")
 	s.date = require("ui.central-panel.dashboard.date")
 	s.todo = require("ui.central-panel.dashboard.todo")
@@ -94,8 +93,8 @@ local dashboard = function(s)
 				layout = wibox.layout.fixed.horizontal,
 			},
 			{
-				s.music,
-				s.media,
+				--s.music,
+				--s.media,
 				layout = wibox.layout.fixed.horizontal,
 			},
 			s.notifs_boxed,

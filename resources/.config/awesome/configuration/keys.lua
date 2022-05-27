@@ -9,7 +9,6 @@ local naughty = require("naughty")
 
 -- Bling
 local bling = require("module.bling")
-local playerctl = bling.signal.playerctl.lib()
 
 -- Machi
 local machi = require("module.layout-machi")
@@ -111,19 +110,6 @@ awful.keyboard.append_global_keybindings({
 	awful.key({}, "XF86AudioMute", function()
 		helpers.volume_control(0)
 	end, { description = "mute volume", group = "hotkeys" }),
-
-	-- Music
-	awful.key({}, "XF86AudioPlay", function()
-		playerctl:play_pause()
-	end, { description = "toggle music", group = "hotkeys" }),
-
-	awful.key({}, "XF86AudioPrev", function()
-		playerctl:previous()
-	end, { description = "previous music", group = "hotkeys" }),
-
-	awful.key({}, "XF86AudioNext", function()
-		playerctl:next()
-	end, { description = "next music", group = "hotkeys" }),
 
 	-- Screenshots
 	awful.key({}, "Print", function()

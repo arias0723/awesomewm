@@ -72,39 +72,39 @@ local music_pos = wibox.widget({
 -- playerctl
 ---------------
 
-local playerctl = require("module.bling").signal.playerctl.lib()
+-- local playerctl = require("module.bling").signal.playerctl.lib()
 
-playerctl:connect_signal("metadata", function(_, title, artist, album_path, __, ___, ____)
-	if title == "" then
-		title = "Nothing Playing"
-	end
-	if artist == "" then
-		artist = "Nothing Playing"
-	end
-	if album_path == "" then
-		album_path = gears.filesystem.get_configuration_dir() .. "theme/assets/no_music.png"
-	end
+-- playerctl:connect_signal("metadata", function(_, title, artist, album_path, __, ___, ____)
+-- 	if title == "" then
+-- 		title = "Nothing Playing"
+-- 	end
+-- 	if artist == "" then
+-- 		artist = "Nothing Playing"
+-- 	end
+-- 	if album_path == "" then
+-- 		album_path = gears.filesystem.get_configuration_dir() .. "theme/assets/no_music.png"
+-- 	end
 
-	music_art:set_image(gears.surface.load_uncached(album_path))
-	music_title:set_markup_silently(helpers.colorize_text(title, beautiful.xforeground .. "b3"))
-	music_artist:set_markup_silently(helpers.colorize_text(artist, beautiful.xforeground .. "e6"))
-end)
+-- 	music_art:set_image(gears.surface.load_uncached(album_path))
+-- 	music_title:set_markup_silently(helpers.colorize_text(title, beautiful.xforeground .. "b3"))
+-- 	music_artist:set_markup_silently(helpers.colorize_text(artist, beautiful.xforeground .. "e6"))
+-- end)
 
-playerctl:connect_signal("playback_status", function(_, playing, __)
-	if playing then
-		music_text:set_markup_silently(helpers.colorize_text("Now Playing", beautiful.xforeground .. "cc"))
-	else
-		music_text:set_markup_silently(helpers.colorize_text("Music", beautiful.xforeground .. "cc"))
-	end
-end)
+-- playerctl:connect_signal("playback_status", function(_, playing, __)
+-- 	if playing then
+-- 		music_text:set_markup_silently(helpers.colorize_text("Now Playing", beautiful.xforeground .. "cc"))
+-- 	else
+-- 		music_text:set_markup_silently(helpers.colorize_text("Music", beautiful.xforeground .. "cc"))
+-- 	end
+-- end)
 
-playerctl:connect_signal("position", function(_, interval_sec, length_sec, player_name)
-	local pos_now = tostring(os.date("!%M:%S", math.floor(interval_sec)))
-	local pos_length = tostring(os.date("!%M:%S", math.floor(length_sec)))
-	local pos_markup = helpers.colorize_text(pos_now .. " / " .. pos_length, beautiful.xforeground .. "66")
+-- playerctl:connect_signal("position", function(_, interval_sec, length_sec, player_name)
+-- 	local pos_now = tostring(os.date("!%M:%S", math.floor(interval_sec)))
+-- 	local pos_length = tostring(os.date("!%M:%S", math.floor(length_sec)))
+-- 	local pos_markup = helpers.colorize_text(pos_now .. " / " .. pos_length, beautiful.xforeground .. "66")
 
-	music_pos:set_markup_silently(pos_markup)
-end)
+-- 	music_pos:set_markup_silently(pos_markup)
+-- end)
 
 local music = wibox.widget({
 	{

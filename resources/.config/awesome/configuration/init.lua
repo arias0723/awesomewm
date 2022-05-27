@@ -51,7 +51,7 @@ end)
 -- Screen Padding and Tags
 screen.connect_signal("request::desktop_decoration", function(s)
 	-- Screen padding
-	screen[s].padding = { left = dpi(10), right = dpi(10), top = dpi(20), bottom = dpi(10) }
+	screen[s].padding = { left = dpi(5), right = dpi(5), top = dpi(10), bottom = dpi(5) }
 	-- -- Each screen has its own tag table.
 	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
 end)

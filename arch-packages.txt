@@ -89,7 +89,7 @@ xdotool
 zsh
 
 # TO REMOVE
-mpd
-mpc
-ncmpcpp
-playerctl
+#mpd
+#mpc
+#ncmpcpp
+#playerctl

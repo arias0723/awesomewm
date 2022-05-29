@@ -1,6 +1,4 @@
-# Video & X11 
-xf86-video-intel
-xf86-video-nouveau
+# Video & X11
 xorg
 xorg-server
 xorg-xinit
@@ -65,6 +63,7 @@ lm_sensors
 networkmanager
 ntp
 pulseaudio
+pulseaudio-bluetooth
 wireless_tools
 
 # Utils

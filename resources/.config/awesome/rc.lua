@@ -25,7 +25,7 @@ theme = themes[2]
 -- ===================================================================
 -- 🌊 Default Applications
 terminal = "kitty"
-editor = terminal .. " -e " .. os.getenv("EDITOR")
+editor = terminal .. " -e " .. "code"--os.getenv("EDITOR")
 vscode = "code"
 browser = "firefox"
 web_search_cmd = "xdg-open https://duckduckgo.com/?q="

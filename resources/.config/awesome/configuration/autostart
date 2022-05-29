@@ -10,6 +10,9 @@ start() {
 # Compositor
 start picom --experimental-backends --config $HOME/.config/awesome/theme/picom.conf
 
+# Screen resolution
+start $HOME/.screenlayout/layoutAcerLaptop.sh
+
 # Load X colors
 start xrdb $HOME/.Xresources
 

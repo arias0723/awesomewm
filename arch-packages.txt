@@ -61,6 +61,7 @@ gvfs-smb
 inotify-tools
 lm_sensors
 networkmanager
+ntfs-3g
 ntp
 pulseaudio
 pulseaudio-bluetooth

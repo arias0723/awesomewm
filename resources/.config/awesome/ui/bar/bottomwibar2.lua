@@ -71,42 +71,44 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	-- Widgets
-	s.mytaglist = require("ui.widgets.taglist")(s)
-	s.github_activity = require("ui.widgets.github-activity")
-	s.tray_toggler = require("ui.widgets.tray-toggle")
-	s.battery = require("ui.widgets.battery")()
-	s.network = require("ui.widgets.network")()
-	s.dashboard_toggle = require("ui.widgets.dashboard-toggle")()
-	s.control_center_toggle = require("ui.widgets.hamburger")(awful.button({}, 1, function()
-		control_center:toggle()
-	end))
+	s.mytaglist = require("ui.bar.taglist")(s)
+	-- s.mytaglist = require("ui.widgets.taglist")(s)
+	-- s.github_activity = require("ui.widgets.github-activity")
+	-- s.tray_toggler = require("ui.widgets.tray-toggle")
+	-- s.battery = require("ui.widgets.battery")()
+	-- s.network = require("ui.widgets.network")()
+	-- s.dashboard_toggle = require("ui.widgets.dashboard-toggle")()
+	-- s.control_center_toggle = require("ui.widgets.hamburger")(awful.button({}, 1, function()
+	-- 	control_center:toggle()
+	-- end))
 
-	local control_center_toggle = wibox.widget({
-		{
-			s.control_center_toggle,
-			margins = dpi(3),
-			widget = wibox.container.margin,
-		},
-		widget = clickable_container,
-	})
+	-- local control_center_toggle = wibox.widget({
+	-- 	{
+	-- 		s.control_center_toggle,
+	-- 		margins = dpi(3),
+	-- 		widget = wibox.container.margin,
+	-- 	},
+	-- 	widget = clickable_container,
+	-- })
 
 	-- Create the wibar
 	----------------------
 	s.mywibar = awful.wibar({
 		type = "dock",
+		position = "bottom",
 		ontop = true,
 		stretch = false,
 		visible = true,
-		height = dpi(40),
-		width = s.geometry.width - dpi(30),
+		height = dpi(50),
+		width = s.geometry.width - dpi(100),
 		screen = s,
 		bg = beautiful.transparent,
 	})
 
-	awful.placement.top(s.mywibar, { margins = beautiful.useless_gap * 2 })
+	awful.placement.bottom(s.mywibar, { margins = beautiful.useless_gap * 0.8 })
 
 	s.mywibar:struts({
-		top = dpi(45),
+		bottom = dpi(50),
 	})
 
 	-- Remove wibar on full screen
@@ -146,23 +148,26 @@ awful.screen.connect_for_each_screen(function(s)
 					spacing = dpi(10),
 					layout = wibox.layout.fixed.horizontal,
 				},
-				clock,
+				--clock,
+				nil,
 				{
 					{
 						s.systray,
 						margins = dpi(10),
 						widget = wibox.container.margin,
 					},
-					s.tray_toggler,
-					s.battery,
-					s.network,
-					s.github_activity,
-					control_center_toggle,
+					-- s.tray_toggler,
+					-- s.battery,
+					-- s.network,
+					--s.github_activity,
+					-- control_center_toggle,
 					layoutbox,
 					spacing = dpi(5),
 					layout = wibox.layout.fixed.horizontal,
 				},
 			},
+			top = dpi(5),
+			bottom = dpi(5),
 			left = dpi(10),
 			right = dpi(10),
 			widget = wibox.container.margin,

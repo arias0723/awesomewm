@@ -8,34 +8,9 @@ accountsservice
 xdg-user-dirs
 lightdm
 lightdm-gtk-greeter
-#lightdm-pantheon-greeter
-#pantheon-default-settings 
-pantheon-settings-daemon
-pantheon-geoclue2-agent
-pantheon-polkit-agent
-sound-theme-elementary
-pantheon-calendar
-switchboard
-switchboard-plug-applications
-switchboard-plug-bluetooth
-switchboard-plug-datetime
-switchboard-plug-keyboard
-switchboard-plug-mouse-touchpad
-switchboard-plug-network
-switchboard-plug-notifications
-switchboard-plug-online-accounts
-switchboard-plug-power
-#switchboard-plug-security-privacy
-switchboard-plug-sound
-wingpanel-indicator-bluetooth
-wingpanel-indicator-datetime
-wingpanel-indicator-network
-wingpanel-indicator-nightlight
-wingpanel-indicator-notifications
-wingpanel-indicator-power
-wingpanel-indicator-sound
 arandr
 capitaine-cursors
+noto-fonts-emoji
 #dex
 dunst
 feh
@@ -44,11 +19,13 @@ maim
 nautilus
 nitrogen
 papirus-icon-theme
+xorg-xprop
+xfce4-power-manager
 
 # Services
 acpi
 acpid
-alsa-tools 
+acpi_call
 alsa-utils
 bluez
 brightnessctl
@@ -66,6 +43,7 @@ ntp
 pulseaudio
 pulseaudio-bluetooth
 wireless_tools
+upower
 
 # Utils
 bat
@@ -82,3 +60,8 @@ xbindkeys
 xclip
 xdotool
 zsh
+
+
+# TO REMOVE
+mdp
+mpc

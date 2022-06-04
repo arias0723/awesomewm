@@ -1,10 +1,7 @@
 # GUI
 awesome-git
+light-git
 picom-git
-wingpanel-standalone-git
-wingpanel-indicator-ayatana-git
-#wingpanel-indicator-privacy-git
-#wingpanel-indicator-weather-git
 rofi
 
 # Shell

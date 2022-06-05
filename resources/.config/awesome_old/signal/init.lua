@@ -1,8 +1,0 @@
-require("signal.battery")
-require("signal.brightness")
-require("signal.volume")
-require("signal.cpu")
-require("signal.ram")
-require("signal.weather")
-require("signal.network")
-require("signal.uptime")

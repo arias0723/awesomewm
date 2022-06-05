@@ -1,63 +1,78 @@
-pcall(require, "luarocks.loader")
---[[
- _____ __ _ __ _____ _____ _____ _______ _____
-|     |  | |  |  ___|  ___|     |       |  ___|
-|  -  |  | |  |  ___|___  |  |  |  | |  |  ___|
-|__|__|_______|_____|_____|_____|__|_|__|_____|
+-- ░█▀▀░█░█░█▀▄░█▀▄░█▀▀░█▀█░█░░
+-- ░▀▀█░█░█░█▀▄░█▀▄░█▀▀░█▀█░█░░
+-- ░▀▀▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀
+-- Banner generated using `toilet -f pagga AwesomeWM"
 
-============== @author rxyhn ==================
-======== https://github.com/rxyhn =============
---]]
+local gears = require('gears')
+local beautiful = require('beautiful')
+local awful = require('awful')
+require('awful.autofocus')
 
--- ===================================================================
--- 📚 Library
-local gfs = require("gears.filesystem")
-local awful = require("awful")
-local beautiful = require("beautiful")
-dpi = beautiful.xresources.apply_dpi
+-- ░█▀▀░█░█░█▀▀░█░░░█░░
+-- ░▀▀█░█▀█░█▀▀░█░░░█░░
+-- ░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀
 
--- 🎨 Themes
-themes = {
-	"day", -- [1] 🌕 Beautiful Light Colorscheme
-	"night", -- [2] 🌑 Aesthetic Dark Colorscheme
-}
-theme = themes[2]
--- ===================================================================
--- 🌊 Default Applications
-terminal = "kitty"
-editor = terminal .. " -e " .. "code"--os.getenv("EDITOR")
-vscode = "code"
-browser = "firefox"
-web_search_cmd = "xdg-open https://duckduckgo.com/?q="
-file_manager = "nautilus"
-music_client = terminal .. " --class music -e ncmpcpp"
-rofi = "rofi -no-lazy-grab -show drun -modi drun -theme " .. gfs.get_configuration_dir() .. "configuration/rofi.rasi"
+awful.util.shell = 'sh'
 
--- 🌏 Weather API
-openweathermap_key = "" -- API Key
-openweathermap_city_id = "" -- City ID
-weather_units = "metric"
+-- ░▀█▀░█░█░█▀▀░█▄█░█▀▀
+-- ░░█░░█▀█░█▀▀░█░█░█▀▀
+-- ░░▀░░▀░▀░▀▀▀░▀░▀░▀▀▀
 
--- ===================================================================
--- 🌟 Load theme
-local theme_dir = gfs.get_configuration_dir() .. "theme/" .. theme .. "/"
-beautiful.init(theme_dir .. "theme.lua")
--- ===================================================================
--- 🖥 Get screen geometry
-screen_width = awful.screen.focused().geometry.width
-screen_height = awful.screen.focused().geometry.height
--- ===================================================================
--- 🚀 Launch Autostart
-awful.spawn.with_shell(gfs.get_configuration_dir() .. "configuration/autostart")
--- ===================================================================
--- 🤖 Import Configuration & module
-require("configuration")
-require("module")
--- ===================================================================
--- ✨ Import Daemons, UI & Widgets
-require("signal")
-require("ui")
--- ===================================================================
--- 🗑 Garbage Collector Settings
-collectgarbage("setpause", 110)
-collectgarbage("setstepmul", 1000)
+beautiful.init(require('theme'))
+
+-- ░█░░░█▀█░█░█░█▀█░█░█░▀█▀
+-- ░█░░░█▀█░░█░░█░█░█░█░░█░
+-- ░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░░▀░
+
+require('layout')
+
+-- ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░█░█░█▀▄░█▀█░▀█▀░▀█▀░█▀█░█▀█░█▀▀
+-- ░█░░░█░█░█░█░█▀▀░░█░░█░█░█░█░█▀▄░█▀█░░█░░░█░░█░█░█░█░▀▀█
+-- ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀
+
+require('configuration.client')
+require('configuration.root')
+require('configuration.tags')
+root.keys(require('configuration.keys.global'))
+
+-- ░█▄█░█▀█░█▀▄░█░█░█░░░█▀▀░█▀▀
+-- ░█░█░█░█░█░█░█░█░█░░░█▀▀░▀▀█
+-- ░▀░▀░▀▀▀░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+
+require('module.notifications')
+require('module.auto-start')
+require('module.exit-screen')
+require('module.quake-terminal')
+require('module.menu')
+require('module.titlebar')
+require('module.brightness-osd')
+require('module.volume-osd')
+require('module.lockscreen')
+require('module.dynamic-wallpaper')
+
+-- ░█░█░█▀█░█░░░█░░░█▀█░█▀█░█▀█░█▀▀░█▀▄
+-- ░█▄█░█▀█░█░░░█░░░█▀▀░█▀█░█▀▀░█▀▀░█▀▄
+-- ░▀░▀░▀░▀░▀▀▀░▀▀▀░▀░░░▀░▀░▀░░░▀▀▀░▀░▀
+
+screen.connect_signal(
+	'request::wallpaper',
+	function(s)
+		-- If wallpaper is a function, call it with the screen
+		if beautiful.wallpaper then
+			if type(beautiful.wallpaper) == 'string' then
+
+				-- Check if beautiful.wallpaper is color/image
+				if beautiful.wallpaper:sub(1, #'#') == '#' then
+					-- If beautiful.wallpaper is color
+					gears.wallpaper.set(beautiful.wallpaper)
+
+				elseif beautiful.wallpaper:sub(1, #'/') == '/' then
+					-- If beautiful.wallpaper is path/image
+					gears.wallpaper.maximized(beautiful.wallpaper, s)
+				end
+			else
+				beautiful.wallpaper(s)
+			end
+		end
+	end
+)

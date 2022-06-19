@@ -33,9 +33,9 @@ chmod -R +x ~/.screenlayout
 chmod +x ~/.xinitrc
 sudo fc-cache -f -v
 # patch awesomewm 
-git clone https://github.com/arias0723/manilarome-awesomewm ./manilarome-awesomewm
-mv ~/.config/awesome ~/.config/awesome-orig
-cp -R ./manilarome-awesomewm/config/awesome/surreal ~/.config/awesome
+#git clone https://github.com/arias0723/manilarome-awesomewm ./manilarome-awesomewm
+#mv ~/.config/awesome ~/.config/awesome-orig
+#cp -R ./manilarome-awesomewm/config/awesome/surreal ~/.config/awesome
 #cp ./rxyhn-awesomewm/misc/.Xresources ~/
 
 # ZSH cfg

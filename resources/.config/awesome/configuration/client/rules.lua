@@ -126,79 +126,79 @@ ruled.client.connect_signal(
 		}
 
 		-- Terminal emulators
-		ruled.client.append_rule {
-			id = 'terminals',
-			rule_any = {
-				class = {
-					'URxvt',
-					'XTerm',
-					'UXTerm',
-					'kitty',
-					'K3rmit'
-				}
-			},
-			properties = {
-				tag = '1',
-				switch_to_tags = true,
-				size_hints_honor = false,
-				titlebars_enabled = true
-			}
-		}
+		-- ruled.client.append_rule {
+		-- 	id = 'terminals',
+		-- 	rule_any = {
+		-- 		class = {
+		-- 			'URxvt',
+		-- 			'XTerm',
+		-- 			'UXTerm',
+		-- 			'kitty',
+		-- 			'K3rmit'
+		-- 		}
+		-- 	},
+		-- 	properties = {
+		-- 		tag = '1',
+		-- 		switch_to_tags = true,
+		-- 		size_hints_honor = false,
+		-- 		titlebars_enabled = true
+		-- 	}
+		-- }
 
 		-- Browsers and chats
-		ruled.client.append_rule {
-			id = 'internet',
-			rule_any = {
-				class = {
-					'firefox',
-					'Tor Browser',
-					'discord',
-					'Chromium',
-					'Google-chrome',
-					'TelegramDesktop'
-				}
-			},
-			properties = {
-				tag = '2'
-			}
-		}
+		-- ruled.client.append_rule {
+		-- 	id = 'internet',
+		-- 	rule_any = {
+		-- 		class = {
+		-- 			'firefox',
+		-- 			'Tor Browser',
+		-- 			'discord',
+		-- 			'Chromium',
+		-- 			'Google-chrome',
+		-- 			'TelegramDesktop'
+		-- 		}
+		-- 	},
+		-- 	properties = {
+		-- 		tag = '2'
+		-- 	}
+		-- }
 
 		-- Text editors and word processing
-		ruled.client.append_rule {
-			id = 'text',
-			rule_any = {
-				class = {
-					'Geany',
-					'Atom',
-					'Subl3',
-					'code-oss'
-				},
-				name  = {
-					'LibreOffice',
-					'libreoffice'
-				}
-			},
-			properties = {
-				tag = '3'
-			}
-		}
+		-- ruled.client.append_rule {
+		-- 	id = 'text',
+		-- 	rule_any = {
+		-- 		class = {
+		-- 			'Geany',
+		-- 			'Atom',
+		-- 			'Subl3',
+		-- 			'code-oss'
+		-- 		},
+		-- 		name  = {
+		-- 			'LibreOffice',
+		-- 			'libreoffice'
+		-- 		}
+		-- 	},
+		-- 	properties = {
+		-- 		tag = '3'
+		-- 	}
+		-- }
 
 		-- File managers
-		ruled.client.append_rule {
-			id = 'files',
-			rule_any = {
-				class = {
-					'dolphin',
-					'ark',
-					'Nemo',
-					'File-roller'
-				}
-			},
-			properties = {
-				tag = '4',
-				switch_to_tags = true
-			}
-		}
+		-- ruled.client.append_rule {
+		-- 	id = 'files',
+		-- 	rule_any = {
+		-- 		class = {
+		-- 			'dolphin',
+		-- 			'ark',
+		-- 			'Nemo',
+		-- 			'File-roller'
+		-- 		}
+		-- 	},
+		-- 	properties = {
+		-- 		tag = '4',
+		-- 		switch_to_tags = true
+		-- 	}
+		-- }
 
 		-- Multimedia
 		ruled.client.append_rule {

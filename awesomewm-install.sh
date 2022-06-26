@@ -46,6 +46,9 @@ sudo ln -s -f ~/.zshrc /root/.zshrc
 sudo usermod --shell /usr/bin/zsh $CURRENT_USER
 sudo usermod --shell /usr/bin/zsh root
 
+# X11 cfg
+cp misc/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+
 # Services cfg
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable bluetooth.service

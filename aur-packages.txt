@@ -3,6 +3,7 @@ awesome-git
 light-git
 picom-git
 rofi
+lua-pam-git
 
 # Shell
 zsh-syntax-highlighting

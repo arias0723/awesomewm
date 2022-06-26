@@ -19,7 +19,7 @@ local top_panel = function(s)
 		x = s.geometry.x,
 		y = s.geometry.y,
 		stretch = false,
-		bg = beautiful.transparent,
+		bg = beautiful.bg_normal,
 		fg = beautiful.fg_normal
 	}
 
